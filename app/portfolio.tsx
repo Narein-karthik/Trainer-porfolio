@@ -89,7 +89,7 @@ export function Portfolio() {
 
       <section className="projects section" id="projects">
         <SectionTitle eyebrow="06 · Selected projects" title="Applied ideas, built into working systems." />
-        <div className="project-list">{projects.map((project, i) => <article className="project reveal" key={project.title}><div className={`project-placeholder tone-${i + 1}`}><span>EDITABLE PROJECT VISUAL</span><b>{project.n}</b></div><div className="project-copy"><span>{project.n}</span><h3>{project.title}</h3><p>{project.copy}</p><small>{project.tech}</small></div></article>)}</div>
+        <div className="project-list">{projects.map((project) => <article className="project reveal" key={project.title}><span className="project-number">{project.n}</span><div className="project-copy"><h3>{project.title}</h3><p>{project.copy}</p><small>{project.tech}</small></div></article>)}</div>
       </section>
 
       <section className="recognition section" id="recognition">

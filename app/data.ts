@@ -24,7 +24,6 @@ export const engagements = [
 export const expertise = {
   "Data & AI": ["Artificial Intelligence", "Machine Learning", "Data Analytics", "Power BI", "Computer Vision", "Generative AI", "Prompt Engineering"],
   "Programming & tools": ["Python", "SQL", "Database Fundamentals", "Microsoft Excel", "AI-Powered Excel", "Android Development", "Firebase"],
-  "Training & career": ["Technical Mentoring", "Workshop Facilitation", "Project-Based Learning", "Career Guidance", "Resume Preparation", "Interview Readiness"],
 } as const;
 
 export const programmes = [
