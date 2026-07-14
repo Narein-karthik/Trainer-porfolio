@@ -104,7 +104,7 @@ export function Portfolio() {
 
       <section className="contact section" id="contact">
         <div className="contact-intro reveal"><p className="eyebrow">08 · Contact</p><h2>Workshops and<br /><em>institutional collaboration</em></h2><p>I’m available for workshops, faculty development programmes, internships, guest lectures, mentoring, judging, institutional training and technology-education partnerships.</p><blockquote>“If you are planning a workshop or training programme, let’s discuss the audience, objectives and format.”</blockquote></div>
-        <div className="contact-details reveal"><a className="email" href="mailto:narein2004@gmail.com"><span>Email</span>narein2004@gmail.com ↗</a><dl><div><dt>Location</dt><dd>Bengaluru, India</dd></div><div><dt>Phone</dt><dd>Add phone number</dd></div><div><dt>LinkedIn</dt><dd>Add LinkedIn URL</dd></div><div><dt>GitHub</dt><dd>Add GitHub URL</dd></div><div><dt>Portfolio</dt><dd>Add portfolio URL</dd></div></dl></div>
+        <div className="contact-details reveal"><a className="email" href="mailto:narein2004@gmail.com"><span>Email</span>narein2004@gmail.com ↗</a><dl><div><dt>Location</dt><dd>Bengaluru, India</dd></div><div><dt>Phone</dt><dd><a href="tel:+918754319914">+91 87543 19914</a></dd></div><div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer">Open LinkedIn profile ↗</a></dd></div><div><dt>GitHub</dt><dd><a href="https://github.com/Narein-karthik" target="_blank" rel="noreferrer">github.com/Narein-karthik ↗</a></dd></div></dl></div>
       </section>
     </main>
 
