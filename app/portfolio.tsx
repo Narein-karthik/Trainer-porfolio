@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { engagements, experience, expertise, navItems, programmes, projects, recognition } from "./data";
+import { CoursesSection } from "./courses-section";
 
 const Logo = ({ footer = false }: { footer?: boolean }) => (
   <a className={`brand ${footer ? "brand-footer" : ""}`} href="#home" aria-label="DTEKSKILZ — back to home">
@@ -43,7 +44,7 @@ export function Portfolio() {
           <p className="eyebrow">Trainer · AI Engineer · EdTech Founder</p>
           <h1>NAREIN<br /><em>KARTHIK E</em></h1>
           <p className="hero-statement">Practical technology training<br />for students and institutions.</p>
-          <div className="hero-actions"><a className="button primary" href="#programmes">Explore Training Programmes</a><a className="button text-link" href="mailto:narein2004@gmail.com?subject=Workshop%20Enquiry">Discuss a Workshop <span>↗</span></a></div>
+          <div className="hero-actions"><a className="button primary" href="#programmes">Explore Training Programmes</a><a className="button text-link" href="mailto:nareinoff@gmail.com?subject=Workshop%20Enquiry">Discuss a Workshop <span>↗</span></a></div>
           <div className="hero-meta"><p>AI & Data Analytics Trainer <span>·</span> AI Engineer</p><p>Founder & CEO, DTEKSKILZ <span>·</span> Senior Expert Member, Top Engineers</p><p>Bengaluru, India</p></div>
         </div>
         <div className="hero-visual reveal">
@@ -82,18 +83,20 @@ export function Portfolio() {
       </section>
 
       <section className="programmes section" id="programmes">
-        <div className="programme-intro reveal"><p className="eyebrow">05 · Training programmes</p><h2>Flexible formats.<br /><em>One clear purpose.</em></h2><p>The same topic can be delivered as an introduction, an intensive workshop or a longer project-based programme.</p><a className="button light" href="mailto:narein2004@gmail.com?subject=Institutional%20Training%20Enquiry">Plan an institutional programme ↗</a></div>
+        <div className="programme-intro reveal"><p className="eyebrow">05 · Training programmes</p><h2>Flexible formats.<br /><em>One clear purpose.</em></h2><p>The same topic can be delivered as an introduction, an intensive workshop or a longer project-based programme.</p><a className="button light" href="mailto:nareinoff@gmail.com?subject=Institutional%20Training%20Enquiry">Plan an institutional programme ↗</a></div>
         <div className="programme-list reveal">{programmes.map((item, i) => <div key={item}><span>{String(i + 1).padStart(2, "0")}</span><p>{item}</p></div>)}</div>
         <div className="duration reveal"><p>Available durations</p><div>{["Half day", "One day", "Two days", "One week", "Two weeks", "One month", "Custom programme"].map(d => <span key={d}>{d}</span>)}</div></div>
       </section>
 
+      <CoursesSection />
+
       <section className="projects section" id="projects">
-        <SectionTitle eyebrow="06 · Selected projects" title="Applied ideas, built into working systems." />
+        <SectionTitle eyebrow="07 · Selected projects" title="Applied ideas, built into working systems." />
         <div className="project-list">{projects.map((project) => <article className="project reveal" key={project.title}><span className="project-number">{project.n}</span><div className="project-copy"><h3>{project.title}</h3><p>{project.copy}</p><small>{project.tech}</small></div></article>)}</div>
       </section>
 
       <section className="recognition section" id="recognition">
-        <div className="recognition-head reveal"><p className="eyebrow">07 · Recognition</p><h2>Professional highlights,<br /><em>earned through participation.</em></h2></div>
+        <div className="recognition-head reveal"><p className="eyebrow">08 · Recognition</p><h2>Professional highlights,<br /><em>earned through participation.</em></h2></div>
         <div className="recognition-list reveal">{recognition.map((item, i) => <div key={item}><span>{String(i + 1).padStart(2, "0")}</span><p>{item}</p></div>)}</div>
         <figure className="recognition-photo reveal"><Image unoptimized src="/images/mentorship-event.png" fill sizes="(max-width: 800px) 100vw, 44vw" alt="Students and mentors at an institutional recognition event" /></figure>
       </section>
@@ -103,11 +106,12 @@ export function Portfolio() {
       </section>
 
       <section className="contact section" id="contact">
-        <div className="contact-intro reveal"><p className="eyebrow">08 · Contact</p><h2>Workshops and<br /><em>institutional collaboration</em></h2><p>I’m available for workshops, faculty development programmes, internships, guest lectures, mentoring, judging, institutional training and technology-education partnerships.</p><blockquote>“If you are planning a workshop or training programme, let’s discuss the audience, objectives and format.”</blockquote></div>
-        <div className="contact-details reveal"><a className="email" href="mailto:narein2004@gmail.com"><span>Email</span>narein2004@gmail.com ↗</a><dl><div><dt>Location</dt><dd>Bengaluru, India</dd></div><div><dt>Phone</dt><dd><a href="tel:+918754319914">+91 87543 19914</a></dd></div><div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer">Open LinkedIn profile ↗</a></dd></div><div><dt>GitHub</dt><dd><a href="https://github.com/Narein-karthik" target="_blank" rel="noreferrer">github.com/Narein-karthik ↗</a></dd></div></dl></div>
+        <div className="contact-intro reveal"><p className="eyebrow">09 · Contact</p><h2>Workshops and<br /><em>institutional collaboration</em></h2><p>I’m available for workshops, faculty development programmes, internships, guest lectures, mentoring, judging, institutional training and technology-education partnerships.</p><blockquote>“If you are planning a workshop or training programme, let’s discuss the audience, objectives and format.”</blockquote></div>
+        <div className="contact-details reveal"><a className="email" href="mailto:nareinoff@gmail.com"><span>Email</span>nareinoff@gmail.com ↗</a><dl><div><dt>Location</dt><dd>Bengaluru, India</dd></div><div><dt>Phone</dt><dd><a href="tel:+918754319914">+91 87543 19914</a></dd></div><div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer">Open LinkedIn profile ↗</a></dd></div><div><dt>GitHub</dt><dd><a href="https://github.com/Narein-karthik" target="_blank" rel="noreferrer">github.com/Narein-karthik ↗</a></dd></div></dl></div>
       </section>
     </main>
 
-    <footer><div className="footer-brand"><Logo footer /><p>Narein Karthik E<br />AI & Data Analytics Trainer<br />Bengaluru, India</p></div><div className="footer-links">{navItems.slice(0, 7).map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}</div><a className="footer-email" href="mailto:narein2004@gmail.com">narein2004@gmail.com</a><p className="copyright">© {new Date().getFullYear()} Narein Karthik E. All rights reserved.</p></footer>
+    <footer><div className="footer-brand"><Logo footer /><p>Narein Karthik E<br />AI & Data Analytics Trainer<br />Bengaluru, India</p></div><div className="footer-links">{navItems.slice(0, 7).map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}</div><a className="footer-email" href="mailto:nareinoff@gmail.com">nareinoff@gmail.com</a><p className="copyright">© {new Date().getFullYear()} Narein Karthik E. All rights reserved.</p></footer>
+    <a className="whatsapp-float" href="https://wa.me/918754319914?text=Hello%20Narein%2C%20I%20would%20like%20to%20know%20more%20about%20your%20training%20programmes." target="_blank" rel="noreferrer" aria-label="Chat with Narein on WhatsApp" title="Chat on WhatsApp"><span aria-hidden="true">☎</span></a>
   </>;
 }
