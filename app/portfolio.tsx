@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { engagements, experience, expertise, navItems, programmes, projects, recognition } from "./data";
 import { CoursesSection } from "./courses-section";
+import { MediaShowcase } from "./media-showcase";
 
 const Logo = ({ footer = false }: { footer?: boolean }) => (
   <a className={`brand ${footer ? "brand-footer" : ""}`} href="#home" aria-label="DTEKSKILZ — back to home">
@@ -69,12 +70,8 @@ export function Portfolio() {
       <section className="workshops section" id="workshops">
         <SectionTitle eyebrow="03 · Workshops & engagements" title="Real classrooms. Practical outcomes." copy="Training designed with the audience, time frame and intended learning outcome in mind." />
         <div className="stats reveal"><div><strong>7+</strong><span>workshops & events</span></div><div><strong>500+</strong><span>students mentored</span></div><div><strong>4+</strong><span>institutions & organisations</span></div></div>
-        <div className="photo-story reveal">
-          <figure className="photo-main"><Image unoptimized src="/images/excel-workshop.png" fill sizes="(max-width: 800px) 100vw, 55vw" alt="Narein teaching an AI-powered Excel workshop" /><figcaption>Hands-on instruction · AI-Powered Excel</figcaption></figure>
-          <figure className="photo-secondary"><Image unoptimized src="/images/classroom-session.png" fill sizes="(max-width: 800px) 100vw, 32vw" alt="Narein leading an interactive classroom session" /></figure>
-        </div>
+        <MediaShowcase />
         <div className="engagements"><p className="eyebrow">Selected engagements</p>{engagements.map((item, i) => <details className="engagement reveal" key={item.title} open={i === 0}><summary><span>{String(i + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.meta}</p><b aria-hidden="true">＋</b></summary><div><p>{item.copy}</p></div></details>)}</div>
-        <div className="photo-strip reveal"><figure><Image unoptimized src="/images/autotronics-session.png" fill sizes="33vw" alt="Autotronics workshop demonstration around a vehicle" /></figure><figure><Image unoptimized src="/images/bti-group.png" fill sizes="33vw" alt="Group photograph at Bangalore Technological Institute" /></figure><figure><Image unoptimized src="/images/student-recognition.png" fill sizes="33vw" alt="Narein with students receiving event certificates" /></figure></div>
       </section>
 
       <section className="expertise section" id="expertise">
