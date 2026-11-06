@@ -4,12 +4,42 @@ export type WorkshopMedia = {
   title: string;
   institution: string;
   date?: string;
-  kind: "Event poster" | "Event highlights" | "Session photo";
+  kind: "Event poster" | "Event highlights" | "Session photo" | "Press coverage";
   description: string;
 };
 
+export const facultythonImages: WorkshopMedia[] = [
+  {
+    src: "/images/workshops/facultython-2026-jury-poster.png",
+    alt: "FACULTYTHON 2026 poster naming Narein Karthik E as a jury member for the seven-hour hackathon on 31 October 2026",
+    title: "FACULTYTHON 2026 — Jury Member",
+    institution: "Meston College of Arts & Science · Top Engineers–India",
+    date: "31 October 2026",
+    kind: "Event poster",
+    description: "Narein Karthik E served as a jury member for FACULTYTHON 2026, a seven-hour hackathon organised by Meston College of Arts & Science in collaboration with Top Engineers–India, for faculty, students, research scholars, startups and industry experts.",
+  },
+  {
+    src: "/images/workshops/facultython-2026-event-highlights.png",
+    alt: "FACULTYTHON 2026 collage showing jury participation, interactions with participants, felicitation and certificate presentations",
+    title: "FACULTYTHON 2026 — Event Highlights",
+    institution: "Meston College of Arts & Science · Top Engineers–India",
+    date: "31 October 2026",
+    kind: "Event highlights",
+    description: "Moments from Narein’s participation as a jury member: judging, interacting with participants, felicitation and certificate presentations at FACULTYTHON 2026.",
+  },
+  {
+    src: "/images/workshops/facultython-2026-press-coverage.png",
+    alt: "Tamil newspaper clipping with coverage and group photographs of FACULTYTHON 2026",
+    title: "FACULTYTHON 2026 — Press Coverage",
+    institution: "Meston College of Arts & Science · Top Engineers–India",
+    kind: "Press coverage",
+    description: "Newspaper coverage of FACULTYTHON 2026, the seven-hour hackathon held on 31 October 2026 at Meston College of Arts & Science in collaboration with Top Engineers–India.",
+  },
+];
+
 // Dates without a visible year are kept as printed, rather than inferred.
 export const galleryImages: WorkshopMedia[] = [
+  ...facultythonImages,
   {
     src: "/images/workshops/vemana-generative-ai-rag.jpg",
     alt: "Vemana Institute of Technology poster for Introduction to Generative AI and RAG, 5 October 2026",

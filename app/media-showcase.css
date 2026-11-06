@@ -29,6 +29,11 @@
 .slide-dots button span { width: 6px; height: 6px; border-radius: 50%; background: #bbb9c1; }
 .slide-dots button.active span { width: 12px; border-radius: 3px; background: var(--raspberry); }
 .gallery-heading { padding-top: 2rem; border-top: 1px solid var(--media-border); }
+.gallery-collection + .gallery-collection { margin-top: 3.5rem; }
+.gallery-collection-heading { margin-bottom: 1.5rem; }
+.gallery-collection-heading .eyebrow { margin-bottom: .65rem; }
+.gallery-collection-heading h4 { font: 400 clamp(1.8rem, 3vw, 2.6rem)/1.15 var(--serif); color: var(--navy); margin: 0 0 .75rem; }
+.gallery-collection-heading > p:last-child:not(.eyebrow) { max-width: 780px; color: #666978; font-size: .9rem; margin-bottom: 0; }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.25rem; }
 .gallery-card { display: flex; flex-direction: column; padding: 0; border: 1px solid var(--media-border); text-align: left; background: #fff; color: var(--navy); cursor: zoom-in; min-width: 0; }
 .gallery-visual { position: relative; display: block; width: 100%; aspect-ratio: 1; background: #eeebed; overflow: hidden; }

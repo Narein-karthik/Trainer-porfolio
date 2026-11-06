@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { galleryImages, workshopSlides, type WorkshopMedia } from "./workshop-media";
+import { facultythonImages, galleryImages, workshopSlides, type WorkshopMedia } from "./workshop-media";
 
 function TrainingSlideshow({ onView, viewerOpen }: { onView: (image: WorkshopMedia) => void; viewerOpen: boolean }) {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -77,15 +77,9 @@ function TrainingSlideshow({ onView, viewerOpen }: { onView: (image: WorkshopMed
   );
 }
 
-function PhotoGallery({ onView }: { onView: (image: WorkshopMedia) => void }) {
-  return (
-    <section className="photo-gallery" id="gallery" aria-labelledby="gallery-title">
-      <div className="media-heading gallery-heading">
-        <div><p className="eyebrow">Photo gallery</p><h3 id="gallery-title">Moments that tell the story.</h3></div>
-        <p>Explore workshop highlights and event posters. Hover for a short description, or select an image for a closer look.</p>
-      </div>
-      <div className="gallery-grid">
-        {galleryImages.map((item) => (
+function GalleryCards({ images, onView }: { images: WorkshopMedia[]; onView: (image: WorkshopMedia) => void }) {
+  return <div className="gallery-grid">
+        {images.map((item) => (
           <button type="button" className="gallery-card" key={item.src} onClick={() => onView(item)} aria-label={"View " + item.title + (item.date ? ", " + item.date : "")} aria-haspopup="dialog">
             <span className="gallery-visual">
               <Image unoptimized src={item.src} fill sizes="(max-width: 560px) 88vw, (max-width: 1000px) 43vw, 28vw" alt={item.alt} loading="lazy" />
@@ -94,7 +88,30 @@ function PhotoGallery({ onView }: { onView: (image: WorkshopMedia) => void }) {
             <span className="gallery-caption"><small>{item.date || item.kind}</small><strong>{item.title}</strong><span>{item.institution}</span></span>
           </button>
         ))}
+      </div>;
+}
+
+function PhotoGallery({ onView }: { onView: (image: WorkshopMedia) => void }) {
+  const otherImages = galleryImages.filter((image) => !facultythonImages.includes(image));
+
+  return (
+    <section className="photo-gallery" id="gallery" aria-labelledby="gallery-title">
+      <div className="media-heading gallery-heading">
+        <div><p className="eyebrow">Photo gallery</p><h3 id="gallery-title">Moments that tell the story.</h3></div>
+        <p>Explore event posters, workshop highlights and press coverage. Hover for a short description, or select an image for a closer look.</p>
       </div>
+      <section className="gallery-collection" aria-labelledby="facultython-gallery-title">
+        <header className="gallery-collection-heading">
+          <p className="eyebrow">Latest engagement · 31 October 2026</p>
+          <h4 id="facultython-gallery-title">FACULTYTHON 2026 — Jury Member</h4>
+          <p>Meston College of Arts & Science, in collaboration with Top Engineers–India. A seven-hour hackathon, captured through the jury announcement, event highlights and press coverage.</p>
+        </header>
+        <GalleryCards images={facultythonImages} onView={onView} />
+      </section>
+      <section className="gallery-collection" aria-labelledby="more-events-title">
+        <header className="gallery-collection-heading"><h4 id="more-events-title">More workshops & events</h4></header>
+        <GalleryCards images={otherImages} onView={onView} />
+      </section>
     </section>
   );
 }
